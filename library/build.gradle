@@ -3,11 +3,10 @@ apply plugin: 'maven'
 
 repositories {
     google()
-    jcenter()
 }
 
 dependencies {
-    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'androidx.annotation:annotation:1.2.0'
 }
 
 android {
@@ -78,7 +77,7 @@ android.libraryVariants.all { variant ->
         File outDir = file("$buildDir/artifacts")
         File apkFile = variant.outputs[0].outputFile
 
-        def task = project.tasks.create("copy${variant.name.capitalize()}Aar", Copy)
+        def task = project.tasks.create("csopy${variant.name.capitalize()}Aar", Copy)
         task.from apkFile
         task.into outDir
         task.rename apkFile.name, "${ARTIFACT_ID}-${LIBRARY_VERSION_NAME}.aar"

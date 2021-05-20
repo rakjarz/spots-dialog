@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 repositories {
     google()
-    jcenter()
     maven {
         url  "https://dl.bintray.com/d-max/spots-dialog"
     }
@@ -13,7 +12,7 @@ android {
 
     defaultConfig {
         versionName SAMPLE_VERSION_NAME
-        targetSdkVersion 27
+        targetSdkVersion TARGET_SDK_VERSION
     }
 
     flavorDimensions "minApi"
@@ -32,22 +31,22 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     signingConfigs {
-        release {
-            storeFile file(System.getProperty("user.home") + "/.android/dmax.keystore")
-            storePassword keystorePassword
-            keyAlias "dmax"
-            keyPassword keystorePassword
-        }
+//        release {
+//            storeFile file(System.getProperty("user.home") + "/.android/dmax.keystore")
+//            storePassword keystorePassword
+//            keyAlias "dmax"
+//            keyPassword keystorePassword
+//        }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             minifyEnabled false
             shrinkResources false
         }
