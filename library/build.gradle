@@ -40,16 +40,6 @@ afterEvaluate{
                 artifactId = 'spots-dialog'
                 version = LIBRARY_VERSION_NAME
             }
-            // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the release build variant.
-                from components.debug
-
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'com.github.d-max'
-                artifactId = 'spots-dialog-debug'
-                version = LIBRARY_VERSION_NAME
-            }
         }
     }
 }
